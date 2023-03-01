@@ -24,9 +24,9 @@ type TProduct = {
   attributes: TProductAttributes
 }
 
-type TAPIAVODetailResponse = TProduct
+type TAPIWATCHDetailResponse = TProduct
 
-type TAPIAvoResponse = {
+type TAPIWATCHResponse = {
   length: number
   data: TProduct[]
   error?: string
