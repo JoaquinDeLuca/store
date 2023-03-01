@@ -7,6 +7,7 @@ export default function productID() {
   return (
     <div>
         productID:  {id}
+        ESta es la pagina del producto en si
     </div>
   )
 }
