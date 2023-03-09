@@ -1,0 +1,85 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+}
+.containerCard{
+    /* border: 2px solid teal; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 5px;
+}
+.img{
+    border-radius: 15px;
+}
+.dataSheetContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addCart{
+    margin-top: 12px;
+}
+.input{
+    padding: 8px;
+    border-color: #20262E;
+    border-radius: 15px 0 0 15px;
+}
+.btn{
+    border: 0;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    background-color: #20262E;
+    color: white;
+
+}
+
+.dataSheetContainer{
+    border: 1px solid red;
+}
+
+.table{
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    border: 1px solid #ebebeb;
+    border-radius: 15px;
+    border-spacing: 0;
+}
+.thead{
+    background-color: #ebebeb;
+    width: 100%;
+}
+.th{
+    padding: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+.td{
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+.tr:hover{
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 768px) {
+    .card{
+        flex-direction: row;
+    }
+    .addCartContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: auto 0;
+        padding: 10px
+    }
+}
