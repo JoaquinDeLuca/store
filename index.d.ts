@@ -11,22 +11,29 @@ type TProductId = string
 
 type TProductAttributes = {
   description: string
-  shape: string
-  color: string
+  SpeakerType: string
+  OutputPower: string
+  FrequencyResponse: string
+  Sensitivity: string
+  Dimensions: string
+  Weight: string
+  Battery: string
+  BatteryLife: string
+  TypeOfConnector: string
 }
 
 type TProduct = {
   id: TProductId
   name: string
-  sku: string
   price: number
   image: Url
   attributes: TProductAttributes
+  amount?: number
 }
 
-type TAPIWATCHDetailResponse = TProduct
+type TAPISpeakerDetailResponse = TProduct
 
-type TAPIWATCHResponse = {
+type TAPISpeakerResponse = {
   length: number
   data: TProduct[]
   error?: string
