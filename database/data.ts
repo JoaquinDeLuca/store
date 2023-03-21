@@ -3,7 +3,7 @@ const data: Record<TProductId, TProduct> = {
       name: 'JBL Flip 5 Black',
       id: '2zd33b8c',
       price: 20,
-      image: '/images/Speaker_JBLFlip5Black.jpg',
+      image: '/images/Speaker_JBLFlip5Black.png',
       attributes: {
         description:
           '.',
@@ -22,7 +22,7 @@ const data: Record<TProductId, TProduct> = {
       name: 'JBL GO 2 Black',
       id: '6trfgkkj',
       price: 18,
-      image: '/images/Speaker_JBLGO2Black.jpg',
+      image: '/images/Speaker_JBLGO2Black.png',
       attributes: {
         description:
           '',
@@ -41,7 +41,7 @@ const data: Record<TProductId, TProduct> = {
       name: 'Xiaomi Mi Portable Speaker',
       id: '7bcr49em',
       price: 15,
-      image: '/images/Speaker_Xiaomi_Mi_Portable.jpg',
+      image: '/images/Speaker_Xiaomi_Mi_Portable.png',
       attributes: {
         description:
           '',
@@ -60,7 +60,7 @@ const data: Record<TProductId, TProduct> = {
       name: 'JBL Clip 4 Black/Orange',
       id: '098323ks',
       price: 9.99,
-      image: '/images/Speaker_JBL_Clip_4.jpg',
+      image: '/images/Speaker_JBL_Clip_4.png',
       attributes: {
         description:
           '',
@@ -79,7 +79,7 @@ const data: Record<TProductId, TProduct> = {
       name: 'JBL GO 3 Black',
       id: '098309ks',
       price: 14.99,
-      image: '/images/Speaker_JBLGO3Black.jpg',
+      image: '/images/Speaker_JBLGO3Black.png',
       attributes: {
         description:
           '',
@@ -98,7 +98,7 @@ const data: Record<TProductId, TProduct> = {
       name: 'MIFA A90 Black',
       id: '098377ks',
       price: 12,
-      image: '/images/Speaker_MIFAA90Black.jpg',
+      image: '/images/Speaker_MIFAA90Black.png',
       attributes: {
         description:
           '',
