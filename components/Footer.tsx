@@ -1,4 +1,6 @@
 import style from "@styles/footer.module.css";
+import Instagram from '/public/images/instagram.svg'
+import Twitter from '/public/images/twitter.svg'
 
 export default function Footer() {
   return (
@@ -23,14 +25,14 @@ export default function Footer() {
             target={"_blank"}
             href="https://www.instagram.com/"
           >
-            Instagram
+            <Instagram/> Instagram
           </a>
           <a
             className={style.link}
             target={"_blank"}
             href="https://twitter.com/"
           >
-            Twitter
+            <Twitter/> Twitter
           </a>
         </div>
       </div>

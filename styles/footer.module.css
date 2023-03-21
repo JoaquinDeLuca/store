@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #20262E;
+    background-color: #282425;
     color: white;
+    border-radius: 15px 15px 0 0;
 }
 
 .info{
@@ -19,6 +20,9 @@
 
 .link{
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .copyright{

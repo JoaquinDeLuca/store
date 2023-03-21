@@ -21,9 +21,9 @@
     width: 320px;
     height: 440px;
     border-radius: 20px;
-    background: #FBFFFE;
+    background: #fcfcfc;
     padding: 1.8rem;
-    border: 2px solid #abafb8;
+    border: 2px solid #643029;
     transition: 0.5s ease-out;
     margin: 1rem;
 }
@@ -34,8 +34,8 @@
     margin-bottom: 12px;
 }
 .card:hover {
-    border-color: #20262E;
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    border-color: #282425;
+    box-shadow: 0 4px 18px 0 #a03d2d;
 }
 
 .p{
