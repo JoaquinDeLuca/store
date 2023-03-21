@@ -1,18 +1,38 @@
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #20262E;
+    background-color: #282425;
     color: white;
     position: sticky;
     top: 0;
     padding: 4px;
+    border-radius: 0 0 15px 15px;
+    z-index: 1;
+}
+.maxwidth{
+    max-width: 75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
 }
 .logoAndName{
     display: flex;
     align-items: center;
+    background-color: #fcfcfc;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+.logo{
+    width: 250px;
+    height: 50px;
 }
 .link{
     color: white;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 10px;
+}
+.totalUnits{
+    font-size: 18px;
 }
