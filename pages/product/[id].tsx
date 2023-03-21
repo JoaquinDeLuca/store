@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import api from "../../api";
 import style from '@styles/details.module.css';
+import Spinner from '@components/Spinner'
 
 export default function productID() {
   const [product, setProduct] = useState<TProduct[]>([]);
@@ -25,7 +26,7 @@ export default function productID() {
 
   return (
     <div className={style.container}>
-      {loadding ? <div className={style.loading}><p>Loading...</p> </div>: <CardDestails product={product}/>}
+      {loadding ? <Spinner /> : <CardDestails product={product}/>}
     </div>
   );
 }

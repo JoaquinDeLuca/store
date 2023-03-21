@@ -6,7 +6,7 @@ const data: Record<TProductId, TProduct> = {
       image: '/images/Speaker_JBLFlip5Black.png',
       attributes: {
         description:
-          '.',
+          'The evolution of portable sound, the JBL Flip 5 is a compact speaker with Bluetooth 5.1 connectivity and an innovative compatibility system that allows you to pair two devices to create true stereo sound. Ideal for parties and all kinds of outdoor events, at the beach or in the mountains, with a super comfortable size and long battery life.',
         SpeakerType: "Bluetooth",
         OutputPower: "20W rms",
         FrequencyResponse: "65Hz-20kHz",
@@ -25,7 +25,7 @@ const data: Record<TProductId, TProduct> = {
       image: '/images/Speaker_JBLGO2Black.png',
       attributes: {
         description:
-          '',
+          'The JBL GO 2 is a full-featured, waterproof Bluetooth speaker to take with you everywhere. It plays music wirelessly via Bluetooth for up to 5 hours with continuous JBL sound quality. Thanks to its new IPX7 waterproof design, the GO 2 allows music lovers to take their speaker to the pool or beach.',
         SpeakerType: "Bluetooth",
         OutputPower: "3W RMS",
         FrequencyResponse: "180Hz – 20kHz",
@@ -44,7 +44,7 @@ const data: Record<TProductId, TProduct> = {
       image: '/images/Speaker_Xiaomi_Mi_Portable.png',
       attributes: {
         description:
-          '',
+          "Created for sound lovers, Mi Bluetooth Speaker provides incredible sound quality and allows you to play multiple styles of music. Stylishly designed, it is perfect for enjoying music wherever you go. Specifically, this speaker is just 86x86x45mm in size and weighs only 185 grams. Even so, don't let its dimensions fool you, because Xiaomi has done a great job incorporating inside a powerful speaker that will make you enjoy your favorite music wherever you go.",
         SpeakerType: "Bluetooth",
         OutputPower: "5W",
         FrequencyResponse: "60 Hz - 23k Hz",
@@ -63,7 +63,7 @@ const data: Record<TProductId, TProduct> = {
       image: '/images/Speaker_JBL_Clip_4.png',
       attributes: {
         description:
-          '',
+          'Cute, portable and waterproof, the JBL Clip 4 is the ideal Bluetooth speaker for those who want to take their music literally everywhere. Equipped with JBL Pro sound, incredibly rich for its super-compact format, and its construction is especially robust and resistant to easily adapt to any circumstances of use.',
         SpeakerType: "Bluetooth",
         OutputPower: "5W RMS",
         FrequencyResponse: "100Hz - 20kHz",
@@ -82,7 +82,7 @@ const data: Record<TProductId, TProduct> = {
       image: '/images/Speaker_JBLGO3Black.png',
       attributes: {
         description:
-          '',
+          'Ultra-compact, very eye-catching and really robust, the JBL Go 3 is a portable speaker with Bluetooth 5.1 connectivity that is ready to accompany you to the office, to the gym, to meetings with friends and to your vacation trips, wherever you go. It takes up almost no space and delivers quality sound, for total freedom of enjoyment.',
         SpeakerType: "Bluetooth",
         OutputPower: "4,2W RMS",
         FrequencyResponse: "110 Hz - 20 kHz",
@@ -101,14 +101,14 @@ const data: Record<TProductId, TProduct> = {
       image: '/images/Speaker_MIFAA90Black.png',
       attributes: {
         description:
-          '',
+          'Enjoy the best sound with your friends with the Mifa A90 Black bluetooth speaker. Robust, practical and perfect to enjoy music wherever and whenever you want. Includes speaker, strap, 3.5mm auxiliary cable and user manual, make every moment sound with your A90 Black!',
         SpeakerType: "Bluetooth",
         OutputPower: "60w",
         FrequencyResponse: "60Hz-18kHz",
         Sensitivity: "8 dB",
         Dimensions: "250 x 10 x 11 cm",
         Weight: "1,17kg",
-        Battery: "Bateria de Litio (3,7V 8000mAh)",
+        Battery: "Lithium-ion (3,7V 8000mAh)",
         BatteryLife: "Approximately 20hs",
         TypeOfConnector: "USB Tipo-C",
       },

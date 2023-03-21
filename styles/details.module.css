@@ -6,14 +6,20 @@
 .containerCard{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
-.card{
+.card{ 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 5px;
-    gap: 5px;
+    gap: 12px;
+}
+.addCartContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .img{
     border-radius: 15px;
@@ -55,9 +61,11 @@
 
 .p{
     margin: 15px 0;
+    text-align: start;
 }
-.dataSheetContainer{
-    border: 1px solid red;
+.description{
+    margin: 10px 0;
+    width: 100%;
 }
 
 .table{
@@ -95,13 +103,10 @@
 .tr:hover{
     background-color: #f5f5f5;
 }
-
-.loading{
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 68vh;
+@media (min-width: 585px) {
+    .description{
+        width: 555px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -109,8 +114,6 @@
         flex-direction: row;
     }
     .addCartContainer{
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
         margin: auto 0;
         padding: 10px
