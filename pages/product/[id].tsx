@@ -1,32 +1,29 @@
 import CardDestails from "@components/CardDestails";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import api from "../../api";
 import style from '@styles/details.module.css';
-import Spinner from '@components/Spinner'
+import { GetServerSideProps } from "next";
 
-export default function productID() {
-  const [product, setProduct] = useState<TProduct[]>([]);
-  const [loadding, setLoadding] = useState(true)
+interface Props {
+  data: TProduct
+}
 
-  const {
-    query: { id },
-  } = useRouter();
-
-  useEffect (() => {
-    setLoadding(true)
-    if(id){
-      fetch(`${api}api/watch/${id}`)
-        .then((response) => response.json())
-        .then(( data : TAPISpeakerDetailResponse)  => setProduct([data]))
-        .finally(() => setLoadding(false));
-    }
-  }, [id]);
-  
+export default function productID({data}:Props) {
 
   return (
     <div className={style.container}>
-      {loadding ? <Spinner /> : <CardDestails product={product}/>}
+      {<CardDestails product={data}/>}
     </div>
   );
+}
+
+export const getServerSideProps:GetServerSideProps = async ({query: {id}}) => {
+
+  const res = await fetch(`${api}api/speaker/${id}`)
+  const data = await res.json()
+
+  return {
+    props:{
+      data: data
+    }
+  }
 }
