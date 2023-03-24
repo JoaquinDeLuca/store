@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import speakerSlice from './features/speakerSlice'
+import speakerSlice from './speakerSlice'
 
 export const store = configureStore({
   reducer: {
