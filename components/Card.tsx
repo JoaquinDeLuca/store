@@ -9,21 +9,21 @@ interface Props {
 }
 
 export default function card({ products }: Props) {
-  const printWatch = (watch: TProduct) => {
+  const printWatch = (speaker: TProduct) => {
     return (
-      <div key={watch._id} className={style.card}>
-        <Link href={`${api}product/${watch._id}`} className={style.link}>
+      <div key={speaker._id} className={style.card}>
+        <Link href={`${api}product/${speaker._id}`} className={style.link}>
           <Image
-            src={watch.image}
+            src={speaker.image}
             width={300}
             height={320}
             priority={true}
             className={style.img}
-            alt={watch.name}
+            alt={speaker.name}
           />
           <div className={style.cardDetails}>
-            <p className={style.p}>{watch.name}</p>
-            <p>Price: ${watch.price}</p>
+            <p className={style.p}>{speaker.name}</p>
+            <p>Price: ${speaker.price}</p>
           </div>
         </Link>
       </div>
