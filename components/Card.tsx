@@ -11,8 +11,8 @@ interface Props {
 export default function card({ products }: Props) {
   const printWatch = (watch: TProduct) => {
     return (
-      <div key={watch.id} className={style.card}>
-        <Link href={`${api}product/${watch.id}`} className={style.link}>
+      <div key={watch._id} className={style.card}>
+        <Link href={`${api}product/${watch._id}`} className={style.link}>
           <Image
             src={watch.image}
             width={300}
