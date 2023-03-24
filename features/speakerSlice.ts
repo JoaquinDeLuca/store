@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from 'store'
+import { RootState } from 'features/store'
 
 export interface State {
   products: TProduct[],
@@ -20,26 +20,22 @@ export const counterSlice = createSlice({
   reducers: {
     addToCart: (state, action:PayloadAction<TProduct>) => {
 
-      const productOne = state.products.find( item => item.id === action.payload.id)
+      const productOne = state.products.find( item => item._id === action.payload._id)
 
       if(productOne){
-
         productOne.amount ? productOne.amount++ : 0;
-        // let total = productOne.amount * productOne.price
-        state.totalprice += action.payload.price; // sumando el precio total 
-        state.TotalQuantity++ // incrementando la cantidad total de productos siempre
-
+        state.totalprice += productOne.price;
+        state.TotalQuantity++ 
       } else {
         state.products.push({...action.payload, amount: 1})
         state.totalprice += action.payload.price;
         state.TotalQuantity++
       }
-      
     },
-    increase: (state, action) => {
-      let id = action.payload;
-      // action.payload.id
-      let product = state.products.find( item => item.id === id)
+    increase: (state, action:PayloadAction<TProductId>) => {
+      let _id = action.payload;
+
+      let product = state.products.find( item => item._id === _id)
 
       if(product && product.amount != 0){
         product.amount ? product.amount++ : 1
@@ -52,23 +48,25 @@ export const counterSlice = createSlice({
         state.totalprice += product.price
       }
     },
-    decrease: (state, action:PayloadAction<TProductId> ) =>  {
-      const id =  action.payload;
+    decrease: (state, action:PayloadAction<TProductId>) =>  {
+      const _id =  action.payload;
 
-      let product = state.products.find( item => item.id === id)
+      let productFind = state.products.find( item => item._id === _id)
 
-      if(product && product.amount != 0){
-        product.amount ? product.amount-- : 0
-        if(!(product.amount === 0 && state.totalprice === 0 && state.TotalQuantity === 0)){
-          state.TotalQuantity--
-          state.totalprice -= product.price
-        }
+      if(productFind?.amount === 1 ){
+        const newProducts = state.products.filter(item => item._id !== _id)
+        state.TotalQuantity--
+        state.totalprice -= productFind.price
+        state.products = newProducts
+      } else {
+        productFind?.amount ? productFind.amount-- : 0
+        state.TotalQuantity--
+        state.totalprice -= productFind?.price ? productFind.price : 0
       }
-
     },
     remove: ( state, action:PayloadAction<TProduct> ) => {
 
-      const productsFilter = state.products.filter(item => item.id !== action.payload.id)
+      const productsFilter = state.products.filter(item => item._id !== action.payload._id)
 
       if(action.payload.amount){
         state.TotalQuantity -= action.payload.amount
