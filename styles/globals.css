@@ -21,3 +21,11 @@ body::-webkit-scrollbar-thumb {
     background-color: #dc4a32;
     border-radius: 15px;       
 }
+
+:root{
+    --white: #fcfcfc;
+    --black: #282425;
+    --orangeOne: #643029;
+    --orangeTwo: #a03d2d;
+    --orangeThree: #dc4a32;
+}
