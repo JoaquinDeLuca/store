@@ -1,7 +1,7 @@
 import style from "@styles/details.module.css";
-import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/speakerSlice";
+import { motion } from "framer-motion"
 
 interface Props {
   product: TProduct;
@@ -20,13 +20,13 @@ export default function CardDestails({ product }: Props) {
       <div key={_id} className={style.containerCard}>
         <div className={style.card}>
           <div className={style.containerImg}>
-            <Image
+            <motion.img
               src={image}
               height={300}
               width={300}
               alt={`speaker ${name}`}
-              priority={true}
               className={style.img}
+              layoutId={name}
             />
           </div>
           <div className={style.addCartContainer}>
