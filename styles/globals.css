@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #fcfcfc;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #fcfcfc;          
+
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #dc4a32;
+    border-radius: 15px;       
+}
+
+:root{
+    --white: #fcfcfc;
+    --black: #282425;
+    --orangeOne: #643029;
+    --orangeTwo: #a03d2d;
+    --orangeThree: #dc4a32;
+}
