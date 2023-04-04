@@ -21,3 +21,13 @@ type TProduct = {
   attributes: TProductAttributes
   amount?: number
 }
+
+type IUSER = {
+  _id: string,
+  name: string,
+  lastName: string,
+  photo: string,
+  mail: string,
+  password: string,
+  logged: boolean
+} 
