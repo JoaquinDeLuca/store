@@ -35,13 +35,14 @@ export default async function login( req: NextApiRequest, res: NextApiResponse) 
 
                 const serialized = serialize("UserToken", token,{
                     httpOnly: true,
-                    secure: false, // ssl the http
-                    sameSite: "none",
+                    secure: true, // ssl the http
+                    sameSite: "strict",
                     maxAge: Math.floor(Date.now() / 1000) + (60 * 60),
-                    path: "/login"
+                    path: "/"
                 });
 
-                return res.status(200).setHeader("Set-Cookie", serialized).json("login successfully");
+                res.setHeader("Set-Cookie", serialized);
+                return res.status(200).json("login successfully");
 
             } catch (error) {
                 console.log(error);
