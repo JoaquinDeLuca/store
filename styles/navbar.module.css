@@ -30,8 +30,16 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin: 0 10px;
+    margin: 0 12px 0 0;
+}
+.imgUser{
+    border-radius: 50%;
+    border: 2px solid var(--orangeOne);
+}
+.containerIcons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .totalUnits{
     font-size: 18px;
@@ -40,5 +48,11 @@
 @media (min-width:425px) {
     .logo{
         width: 250px;
+    }
+    .link{
+        margin: 0;
+    }
+    .containerIcons{
+        gap: 20px;
     }
 }

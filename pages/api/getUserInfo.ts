@@ -1,5 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { verify } from 'jsonwebtoken';
+import { JwtPayload, verify } from 'jsonwebtoken';
+import {connectDB} from 'database/db';
+
+connectDB();
 
 export default async function getUserInfo(req: NextApiRequest, res: NextApiResponse) {
 
@@ -7,9 +10,15 @@ export default async function getUserInfo(req: NextApiRequest, res: NextApiRespo
     if(!UserToken) return res.status(401).json("Not token");
 
     try {
-        const user = await verify(UserToken!, process.env.JWT_SECRET!)
+        const tokenVerify = await verify(UserToken!, process.env.JWT_SECRET!) as JwtPayload
 
-        return res.status(200).json(user);
+        const userInfo: userCredentials = {
+            fullName: tokenVerify.fullName,
+            photo: tokenVerify.photo,
+            logged: tokenVerify.logged
+        }
+
+        return res.status(200).json(userInfo);
     } catch (error) {
         console.log(error);
         return res.status(401).json({error: "Invalid token"});

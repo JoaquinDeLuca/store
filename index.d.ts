@@ -31,3 +31,16 @@ type IUSER = {
   password: string,
   logged: boolean
 } 
+
+type ErrorRes = {
+  data: string,
+  status: number
+}
+
+
+type userCredentials = {
+  fullName: string | null,
+  photo: string | null,
+  logged: string | null
+}
+
