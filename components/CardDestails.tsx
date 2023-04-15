@@ -1,6 +1,6 @@
 import style from "@styles/details.module.css";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../features/speakerSlice";
+import { addToCart } from "../features/slice/speakerSlice";
 import { motion } from "framer-motion"
 
 interface Props {

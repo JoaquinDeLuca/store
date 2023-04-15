@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { selectState } from "../features/speakerSlice";
+import { selectState } from "../features/slice/speakerSlice";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import {
@@ -7,7 +7,7 @@ import {
   decrease,
   remove,
   removeAll,
-} from "../features/speakerSlice";
+} from "../features/slice/speakerSlice";
 import { useDispatch } from "react-redux";
 import style from '@styles/shoppingCart.module.css';
 import Plus from '/public/images/plus-circle.svg';
