@@ -6,6 +6,7 @@ import { useLoginUserMutation } from 'features/actions/authApi'
 import { useRouter } from "next/router";
 import { setCredentials } from 'features/slice/authSlice'
 import { useDispatch } from "react-redux";
+import Loading from 'components/LoaderBtn'
 
 interface dataUser {
   mail: string
@@ -65,7 +66,7 @@ export default function FormSignUp() {
         <label className={style.label}>Password</label>
         <input className={style.input} name="password" type="password" onChange={handleChange} required/>
         {isError && <p className={style.errorMessage}> {errorMessage?.data} </p>}
-        <button className={style.btn} disabled={isLoading} >{isLoading ? <span className={style.loader}></span> : "Sign in"}</button>
+        <button className={style.btn} disabled={isLoading} >{isLoading ? <Loading /> : "Sign in"}</button>
       </form>
       <p>
         Don't have an account? <Link href={"/signup"} className={style.link}>Sign up</Link>
