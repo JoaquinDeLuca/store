@@ -13,6 +13,7 @@ export default async function getUserInfo(req: NextApiRequest, res: NextApiRespo
         const tokenVerify = await verify(UserToken!, process.env.JWT_SECRET!) as JwtPayload
 
         const userInfo: userCredentials = {
+            _id: tokenVerify._id,
             fullName: tokenVerify.fullName,
             photo: tokenVerify.photo,
             logged: tokenVerify.logged
