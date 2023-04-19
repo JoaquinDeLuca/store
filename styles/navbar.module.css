@@ -30,11 +30,12 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    margin: 0 12px 0 0;
+    margin: 0 12px;
 }
 .imgUser{
     border-radius: 50%;
     border: 2px solid var(--orangeOne);
+    cursor: pointer;
 }
 .containerIcons{
     display: flex;
@@ -43,6 +44,33 @@
 }
 .totalUnits{
     font-size: 18px;
+}
+.modal{
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    background-color: #282425;
+    border-radius: 0 0 15px 15px;
+}
+.modalInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+.modalInfo > p {
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
+    width: 100%;
+    margin: 2px 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.modalInfo > p:hover {
+    border-bottom: 1px solid var(--orangeThree);
 }
 
 @media (min-width:425px) {

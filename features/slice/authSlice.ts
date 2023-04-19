@@ -4,6 +4,7 @@ import { RootState } from 'features/store';
 
 
 const initialState: userCredentials = {
+    _id: null,
     fullName: null,
     photo: null,
     logged: null
@@ -14,11 +15,13 @@ export const authSlice = createSlice({
     initialState,
     reducers:{
         setCredentials: ( state, action: PayloadAction<userCredentials>) => {
+            state._id = action.payload._id
             state.fullName = action.payload.fullName
             state.photo = action.payload.photo
             state.logged = action.payload.logged
         },
-        deleteCredentials: (state, action) => {
+        deleteCredentials: (state) => {
+            state._id = null
             state.fullName = null
             state.photo = null
             state.logged = null

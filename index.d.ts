@@ -23,6 +23,7 @@ type TProduct = {
 }
 
 type IUSER = {
+  save(): unknown
   _id: string,
   name: string,
   lastName: string,
@@ -39,6 +40,7 @@ type ErrorRes = {
 
 
 type userCredentials = {
+  _id: string | null,
   fullName: string | null,
   photo: string | null,
   logged: string | null

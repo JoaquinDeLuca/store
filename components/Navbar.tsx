@@ -1,17 +1,44 @@
 import style from '@styles/navbar.module.css'
 import Link from 'next/link'
-import { TotalQuantity } from 'features/slice/speakerSlice'
 import { userInfo } from 'features/slice/authSlice'
-import { useSelector } from 'react-redux'
+import { deleteCredentials } from 'features/slice/authSlice'
+import { TotalQuantity } from 'features/slice/speakerSlice'
+import { useDispatch, useSelector } from 'react-redux'
 import Logo from '/public/images/logo.svg'
 import Cart from '/public/images/cart.svg'
 import UserIcon from 'public/images/User.svg'
 import Image from 'next/image'
+import { useState } from 'react'
+import api from 'api'
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
 
+  // states
   const quantity = useSelector(TotalQuantity)
   const user: userCredentials = useSelector(userInfo)
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const [modal, setModal] = useState(false);
+
+  const handleModal = () => {
+    setModal(!modal)
+  }
+
+  const logOut = async () => {
+
+    const Options = { method: "POST", body: user._id }
+
+    await fetch(`${api}/api/auth/logout`, Options)
+    .then(res => {
+      if (res.status === 200){
+        dispatch(deleteCredentials())
+        router.push("/logIn")
+      }
+    })
+ }
+ 
 
   return (
     <div className={style.container}>
@@ -22,13 +49,20 @@ export default function Navbar() {
           </div>
         </Link>
         <div className={style.containerIcons}>
-          <Link href={"/logIn"} className={style.link}>
             { user.photo ? 
-                <Image src={user.photo} width={39} height={39} alt="User Photo" className={style.imgUser}/>
+              <Image src={user.photo} width={39} height={39} alt="User Photo" className={style.imgUser} onClick={handleModal}/>
               : 
-              <UserIcon />
+              <Link href={"/logIn"} className={style.link}><UserIcon /></Link>
             }
-          </Link>
+            {modal && 
+              <div className={style.modal}>
+                <div className={style.modalInfo} onClick={handleModal}>
+                  <p>My Profile</p>
+                  <p onClick={logOut}>Log Out</p>
+                </div>
+              </div>
+            }
+          
           <Link href={"/shoppingCart"} className={style.link}>
             <Cart />
             {quantity === 0 ? null : <p className={style.totalUnits}>{quantity}</p>}

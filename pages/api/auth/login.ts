@@ -29,7 +29,7 @@ export default async function login( req: NextApiRequest, res: NextApiResponse) 
                     fullName: findUser.name + " " + findUser.lastName,
                     mail: findUser.mail,
                     photo: findUser.photo,
-                    logged: findUser.logged
+                    logged: true,
                 },process.env.JWT_SECRET!)
 
 
@@ -40,6 +40,9 @@ export default async function login( req: NextApiRequest, res: NextApiResponse) 
                     maxAge: Math.floor(Date.now() / 1000) + (60 * 60),
                     path: "/"
                 });
+
+                findUser.logged = true
+                await findUser.save();
 
                 res.setHeader("Set-Cookie", serialized);
                 return res.status(200).json("login successfully");
