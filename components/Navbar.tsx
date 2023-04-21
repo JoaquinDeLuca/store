@@ -50,7 +50,7 @@ export default function Navbar() {
         </Link>
         <div className={style.containerIcons}>
             { user.photo ? 
-              <Image src={user.photo} width={39} height={39} alt="User Photo" className={style.imgUser} onClick={handleModal}/>
+              <img src={user.photo} width={39} height={39} alt="User Photo" className={style.imgUser} onClick={handleModal}/>
               : 
               <Link href={"/logIn"} className={style.link}><UserIcon /></Link>
             }
