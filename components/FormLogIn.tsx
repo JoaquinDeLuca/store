@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { setCredentials } from 'features/slice/authSlice'
 import { useDispatch } from "react-redux";
 import Loading from 'components/LoaderBtn'
+import WindowModal from 'components/WindowModal'
 
 interface dataUser {
   mail: string
@@ -43,7 +44,6 @@ export default function FormSignUp() {
       
         getUserInfo();
       
-        router.push("/")
       })
       .catch( error => setErrorMessage(error));
   };
@@ -71,6 +71,7 @@ export default function FormSignUp() {
       <p>
         Don't have an account? <Link href={"/signup"} className={style.link}>Sign up</Link>
       </p>
+      {isSuccess && <WindowModal route="/" text="✔ Successful login"/> }
     </div>
   );
 }

@@ -89,6 +89,7 @@
     margin: 10px;
     border-radius: 15px;
     height: 30%;
+    width: 85%;
 }
 .text{
     flex-grow: 1;
@@ -101,6 +102,9 @@
 @media (min-width: 425px) {
     .containerCart{
         width: 60%;
+    }
+    .modal{
+        width: 50%;
     }
 }
 @media (min-width: 769px) {
@@ -124,5 +128,8 @@
         width: 100%;
         justify-content: space-around;
 
+    }
+    .modal{
+        width: 40%;
     }
 }
