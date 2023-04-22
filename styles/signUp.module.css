@@ -12,7 +12,7 @@
     justify-content: center;
     border-radius: 15px;
     padding: 18px;
-    margin: 50px;
+    margin: 50px 0;
     box-shadow: 0px 5px 6px 0px rgba(40,36,37,0.73);
     -webkit-box-shadow: 0px 5px 6px 0px rgba(40,36,37,0.73);
     -moz-box-shadow: 0px 5px 6px 0px rgba(40,36,37,0.73);
@@ -32,8 +32,11 @@
     font-size: 30px;
 }
 .form{
+    display: flex;
+    flex-direction: column;
     gap: 5px;
-    width: 120%;
+    margin: 15px 0;
+    width: 95%;
 }
 .label{
     font-size: 16px;
@@ -56,15 +59,21 @@
 .link{
     color: var(--orangeThree);
 }
+.errorMsg{
+    background-color: rgba(255, 0, 0, 0.121);
+    border-radius: 15px;
+    color: rgb(255, 21, 0);
+    font-size: 16px;
+    text-align: center;
+    padding: 4px;
+    margin-top: 10px;
+}
 @media (min-width: 425px) {
     .container{
-        width: auto;
+        width:  74%;
     }
     .input{
         padding: 12px 16px;
-    }
-    .form{
-        width: 110%;
     }
 }
 
