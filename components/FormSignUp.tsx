@@ -1,24 +1,30 @@
 import React,{ChangeEvent, FormEvent, useState} from 'react'
 import style from '@styles/signUp.module.css'
 import Link from 'next/link'
+import { useSignUpUserMutation } from 'features/actions/authApi'
+import Loading from 'components/LoaderBtn'
+import WindowModal from 'components/WindowModal'
 
 
 interface userSignUp {
-    Name: string
-    LastName:string
-    Photo: string
-    Mail: string
-    Password: string
+    name: string,
+    lastName:string,
+    photo: string,
+    mail: string,
+    password: string,
+    logged: boolean
 }
 
 export default function FormSignUp() {
 
+    const [erroMsg, setErrorMsg] = useState<ErrorRes>()
     const [data, setData] = useState<userSignUp>({
-        Name: "",
-        LastName: "",
-        Photo: "",
-        Mail: "",
-        Password: ""
+        name: "",
+        lastName: "",
+        photo: "",
+        mail: "",
+        password: "",
+        logged: false
     })
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,10 +32,17 @@ export default function FormSignUp() {
         setData({...data, [name]:value})
     }
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const [signUpUser,{isSuccess, isError, isLoading }] = useSignUpUserMutation()
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(e);
-        console.log(data);
+
+        await signUpUser(data).unwrap()
+        .then( res => {
+            const resetForm = e.target as HTMLFormElement;
+            resetForm.reset();
+        })
+        .catch( error => setErrorMsg(error))
     }
 
   return (
@@ -37,20 +50,22 @@ export default function FormSignUp() {
         <div className={style.titleContainer}>
             <h2 className={style.h2}>Sign Up </h2>
         </div>
-        <form className={style.form} onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", padding: "50px"}}>
+        <form className={style.form} onSubmit={handleSubmit}>
             <label className={style.label}>Name</label>
-            <input className={style.input} type='text' name='Name'  onChange={handleChange} required/>
+            <input className={style.input} type='text' name='name'  onChange={handleChange} required/>
             <label className={style.label}>LastName</label>
-            <input className={style.input} type='text' name='LastName' onChange={handleChange} required/>
+            <input className={style.input} type='text' name='lastName' onChange={handleChange} required/>
             <label className={style.label}>Photo Url</label>
-            <input className={style.input} type='text' name='Photo' onChange={handleChange} required/>
+            <input className={style.input} type='text' name='photo' onChange={handleChange} required/>
             <label className={style.label}>Email</label>
-            <input className={style.input} type='email'  name='Mail' onChange={handleChange} required/>
+            <input className={style.input} type='email'  name='mail' onChange={handleChange} required/>
             <label className={style.label}>Password</label>
-            <input className={style.input} type='password' name='Password' onChange={handleChange} required/>
-            <button className={style.btn}>Register</button>
+            <input className={style.input} type='password' name='password' onChange={handleChange} required/>
+            {isError && <p className={style.errorMsg}>{erroMsg?.data}</p>}
+            <button className={style.btn} disabled={isLoading} >{isLoading ? <Loading/> : "Register"}</button>
         </form>
-        <p>You already have an account <Link href={"/logIn"} className={style.link}>LogIn</Link></p>
+        <p>You already have an account <Link href={"logIn"} className={style.link}>LogIn</Link></p>
+        {isSuccess && <WindowModal route='logIn' text='you have successfully registered'/>}
     </div>
   )
 }
