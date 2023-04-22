@@ -1,7 +1,10 @@
 import style from "@styles/details.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/slice/speakerSlice";
 import { motion } from "framer-motion"
+import { userInfo } from 'features/slice/authSlice'
+import WindowModal from 'components/WindowModal'
+import { useState } from "react";
 
 interface Props {
   product: TProduct;
@@ -10,9 +13,15 @@ interface Props {
 export default function CardDestails({ product }: Props) {
   const dispatch = useDispatch();
   const { _id, name, price, image, amount, attributes } = product;
+  const userData:userCredentials= useSelector(userInfo);
+  const [show, setShow] = useState(false);
 
   const handleAddToCart = (product: TProduct) => {
-    dispatch(addToCart(product));
+    if(userData.logged){
+      dispatch(addToCart(product));
+    } else {
+      setShow(!show);
+    }
   };
 
   return (
@@ -39,6 +48,7 @@ export default function CardDestails({ product }: Props) {
               >
                 Add to cart
               </button>
+              {show && <WindowModal text="You have to Login to buy"/>}
             </div>
           </div>
         </div>
