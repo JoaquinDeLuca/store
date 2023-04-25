@@ -47,9 +47,11 @@ export default function Cart() {
     <>
       {state.totalprice ? (
         <>
-          <div>
+          <h3 className={style.productCartTitle}>Products in the cart</h3>
+          <div className={style.action}>
             <p className={style.totalPrice}>Total ${totalprice}</p>
             <button className={style.btn} onClick={handleModal} >Pay</button>
+            <button onClick={handleClearAll} className={style.btn} >Clear</button>
             {modal &&
               <>
                 <motion.div className={style.containerModal}
@@ -75,10 +77,9 @@ export default function Cart() {
               </>
             }
           </div>
-          <button onClick={handleClearAll} className={style.btn} >Clear All</button>
         </>
       ) : (
-        <p>You do not have any products in the cart</p>
+        <h3 className={style.notCart}>You do not have any products in the cart</h3>
       )}
       {products.map((item) => (
         <div key={item._id} className={style.containerCart}>
