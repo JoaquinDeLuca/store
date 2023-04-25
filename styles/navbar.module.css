@@ -30,7 +30,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    margin: 0 12px;
+    margin: 0 10px;
 }
 .imgUser{
     border-radius: 50%;
@@ -42,7 +42,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
 }
 .totalUnits{
     font-size: 18px;
@@ -79,9 +78,6 @@
 @media (min-width:425px) {
     .logo{
         width: 250px;
-    }
-    .link{
-        margin: 0;
     }
     .containerIcons{
         gap: 20px;
