@@ -2,6 +2,7 @@ import style from '@styles/navbar.module.css'
 import Link from 'next/link'
 import { userInfo } from 'features/slice/authSlice'
 import { deleteCredentials } from 'features/slice/authSlice'
+import {removeAll} from 'features/slice/speakerSlice'
 import { TotalQuantity } from 'features/slice/speakerSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Logo from 'public/images/logo.svg'
@@ -10,6 +11,7 @@ import UserIcon from 'public/images/user.svg'
 import { useState } from 'react'
 import api from 'api'
 import { useRouter } from 'next/router'
+import {motion} from 'framer-motion'
 
 export default function Navbar() {
 
@@ -33,6 +35,7 @@ export default function Navbar() {
     .then(res => {
       if (res.status === 200){
         dispatch(deleteCredentials())
+        dispatch(removeAll())
         router.push("/logIn")
       }
     })
@@ -54,12 +57,21 @@ export default function Navbar() {
               <Link href={"/logIn"} className={style.link}><UserIcon /></Link>
             }
             {modal && 
-              <div className={style.modal}>
+              <motion.div 
+                className={style.modal}
+                initial={{ scale: 0}}
+                animate={{ scale: 1, top: 57, right: 12 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.3,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
                 <div className={style.modalInfo} onClick={handleModal}>
                   <p>My Profile</p>
                   <p onClick={logOut}>Log Out</p>
                 </div>
-              </div>
+              </motion.div>
             }
           
           <Link href={"/shoppingCart"} className={style.link}>

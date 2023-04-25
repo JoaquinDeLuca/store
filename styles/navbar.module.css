@@ -38,17 +38,19 @@
     cursor: pointer;
 }
 .containerIcons{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid red; */
 }
 .totalUnits{
     font-size: 18px;
 }
 .modal{
     position: absolute;
-    top: 100%;
-    right: 5%;
+    /* top: 150%; */
+    /* right: 12%; */
     background-color: #282425;
     border-radius: 0 0 15px 15px;
 }
@@ -57,8 +59,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
     padding: 15px;
+    width: 110px;
 }
 .modalInfo > p {
     color: var(--white);
