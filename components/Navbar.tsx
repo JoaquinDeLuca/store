@@ -60,7 +60,7 @@ export default function Navbar() {
               <motion.div 
                 className={style.modal}
                 initial={{ scale: 0}}
-                animate={{ scale: 1, top: 57, right: 12 }}
+                animate={{ scale: 1, top: 58, right: 17 }}
                 transition={{
                     duration: 0.6,
                     delay: 0.3,
@@ -68,7 +68,7 @@ export default function Navbar() {
                 }}
               >
                 <div className={style.modalInfo} onClick={handleModal}>
-                  <p>My Profile</p>
+                  {/* <p>My Profile</p> */}
                   <p onClick={logOut}>Log Out</p>
                 </div>
               </motion.div>
