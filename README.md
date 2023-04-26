@@ -3,8 +3,12 @@
 
 
 ## Ejemplo en vivo
-- wwww
+- https://store-five-pied.vercel.app/
 - Si no querés crear un usuario usa este
+
+mail:  super@test.com
+
+contraseña:  qwerty
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de: https://github.com/hendrasob/badges/blob/master/README.md y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
