@@ -21,3 +21,28 @@ type TProduct = {
   attributes: TProductAttributes
   amount?: number
 }
+
+type IUSER = {
+  save(): unknown
+  _id: string,
+  name: string,
+  lastName: string,
+  photo: string,
+  mail: string,
+  password: string,
+  logged: boolean
+} 
+
+type ErrorRes = {
+  data: string,
+  status: number
+}
+
+
+type userCredentials = {
+  _id: string | null,
+  fullName: string | null,
+  photo: string | null,
+  logged: string | null
+}
+

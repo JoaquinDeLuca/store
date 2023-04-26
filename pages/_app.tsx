@@ -4,6 +4,10 @@ import Head from "next/head";
 import "../styles/globals.css";
 import { store } from '../features/store'
 import { Provider } from 'react-redux'
+import {PersistGate} from 'redux-persist/integration/react'
+import  {persistStore} from "redux-persist";
+
+const persistStoreUSer = persistStore(store);
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,9 +17,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <Provider store={store}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <PersistGate loading={null} persistor={persistStoreUSer}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </PersistGate>
       </Provider>
     </>
   );

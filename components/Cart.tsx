@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { selectState } from "../features/speakerSlice";
+import { selectState } from "../features/slice/speakerSlice";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import {
@@ -7,7 +7,7 @@ import {
   decrease,
   remove,
   removeAll,
-} from "../features/speakerSlice";
+} from "../features/slice/speakerSlice";
 import { useDispatch } from "react-redux";
 import style from '@styles/shoppingCart.module.css';
 import Plus from '/public/images/plus-circle.svg';
@@ -47,9 +47,11 @@ export default function Cart() {
     <>
       {state.totalprice ? (
         <>
-          <div>
+          <h3 className={style.productCartTitle}>Products in the cart</h3>
+          <div className={style.action}>
             <p className={style.totalPrice}>Total ${totalprice}</p>
             <button className={style.btn} onClick={handleModal} >Pay</button>
+            <button onClick={handleClearAll} className={style.btn} >Clear</button>
             {modal &&
               <>
                 <motion.div className={style.containerModal}
@@ -75,10 +77,9 @@ export default function Cart() {
               </>
             }
           </div>
-          <button onClick={handleClearAll} className={style.btn} >Clear All</button>
         </>
       ) : (
-        <p>You do not have any products in the cart</p>
+        <h3 className={style.notCart}>You do not have any products in the cart</h3>
       )}
       {products.map((item) => (
         <div key={item._id} className={style.containerCart}>
