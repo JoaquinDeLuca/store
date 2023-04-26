@@ -2,7 +2,7 @@
 
 
 ## Ejemplo en vivo
-- https://joaquin-de-luca.vercel.app/
+- 
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de: https://github.com/hendrasob/badges/blob/master/README.md y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
