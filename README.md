@@ -19,7 +19,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ## Vista previa del proyecto
-Si quieres hechas un vistazo al proyecto
+Si quieres hechar un vistazo al proyecto
 
 ![login](https://user-images.githubusercontent.com/110680187/234439805-2a49e02c-ceea-42b5-9f7a-2b5f401a8a20.png)
 ![cart](https://user-images.githubusercontent.com/110680187/234439838-45d92001-7190-415d-86b9-fafe6333890d.png)
